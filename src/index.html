@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin Block Height</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        h1 {
+            font-size: 2.5em;
+        }
+        #block-height {
+            font-size: 1.5em; /* 调整字体大小 */
+            font-weight: bold;
+            color: #b38fd5; /* 设置淡紫色 */
+        }
+        #error-message {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<h1>Current Bitcoin Block Height</h1>
+<p id="block-height">Loading...</p>
+<p id="error-message"></p>
+
+<script type="module">
+    async function fetchBlockHeight() {
+        const blockHeightElement = document.getElementById('block-height');
+        const errorMessageElement = document.getElementById('error-message');
+
+        try {
+            const response = await fetch('https://blockchain.info/q/getblockcount');
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+
+            const blockHeight = await response.text();
+            blockHeightElement.innerText = `Current Block Height: ${blockHeight}`;
+            errorMessageElement.innerText = ''; // 清除任何之前的错误消息
+        } catch (error) {
+            console.error('Error fetching block height:', error);
+            blockHeightElement.innerText = '';
+            errorMessageElement.innerText = 'Error fetching block height. Please try again later.';
+        }
+    }
+
+    // 页面加载时获取区块高度
+    fetchBlockHeight();
+</script>
+</body>
+</html>

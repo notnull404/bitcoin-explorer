@@ -1,0 +1,39 @@
+{
+  "name": "part1",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development tsx watch src/frontend/server.ts",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@heroicons/react": "^2.0.18",
+    "chart.js": "^4.0.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.0",
+    "mysql2": "^3.11.3",
+    "react": "^18.2.0",
+    "react-chartjs-2": "^5.0.0",
+    "react-dom": "^18.2.0"
+  },
+  "description": "",
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^20.17.9",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.16",
+    "cross-env": "^7.0.3",
+    "tsx": "^4.7.1",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.3.6",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.2"
+  }
+}
