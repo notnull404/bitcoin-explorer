@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "start": "cross-env NODE_ENV=development tsx watch src/frontend/server.ts",
+    "start": "cross-env NODE_ENV=production tsx src/frontend/server.ts",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
